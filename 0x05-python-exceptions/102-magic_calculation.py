@@ -13,5 +13,4 @@ def magic_calculation(a, b):
         except:
             result = b + a
             break
-    """A function based on a python bytee code"""
     return (result)
