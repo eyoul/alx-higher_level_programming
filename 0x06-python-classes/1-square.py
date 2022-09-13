@@ -1,15 +1,12 @@
 #!/usr/bin/python3
-""" defines a square based on size  """
+'''1-square.py: Python script that defines square,
+   private instantiation attribute of size'''
 
 
 class Square:
-    """ square with private instance attribute size """
+        '''Creates  Square type'''
 
-    def __init__(self, size):
+        def __init__(self, size):
+            '''Initializes Square with size'''
 
-        """
-        Args:
-            size: size of square
-        """
-
-        self.__size = 
+            self.__size = size
