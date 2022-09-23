@@ -1,3 +1,6 @@
+The ``0-add_integer`` module
+======================
+
 # 0-add_integer.txt
 
 This module defines an integer addition function ``add_integer(a, b=98)``.
