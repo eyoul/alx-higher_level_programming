@@ -21,7 +21,7 @@ class Student:
         for a in attrs:
             try:
                 new_dict[a] = self.__dict__[a]
-            except:
+            except FileNotFoundError:
                 pass
         return new_dict
 
@@ -30,5 +30,5 @@ class Student:
         for key in json:
             try:
                 setattr(self, key, json[key])
-            except:
+            except FileNotFoundError:
                 pass
