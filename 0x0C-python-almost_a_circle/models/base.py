@@ -64,7 +64,7 @@ class Base:
                 lff = cls.from_json_string(f.read())
             for i, e in enumerate(l):
                 lff[i] = cls.create(**l[i])
-        except FileNotFoundError:
+        except IOError:
             pass
         return lff
 
@@ -102,7 +102,7 @@ class Base:
                                       "x": int(args[2]), "y": int(args[3])}
                     obj = cls.create(**dictionary)
                     lff.append(obj)
-        except IOError: 
+        except FileNotFoundError: 
             pass
         return lff
 
