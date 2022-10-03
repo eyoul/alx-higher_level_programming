@@ -102,7 +102,7 @@ class Base:
                                       "x": int(args[2]), "y": int(args[3])}
                     obj = cls.create(**dictionary)
                     lff.append(obj)
-        except FileNotFoundError:
+        except ParserError:
             pass
         return lff
 
