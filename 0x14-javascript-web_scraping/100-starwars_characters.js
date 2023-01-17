@@ -1,14 +1,16 @@
-t request = require('request');
-const url = 'https://swapi.co/api/films/' + process.argv[2];
-request(url, function (error, response, body) {
+#!/usr/bin/node
+const request = require('request');
+request(process.argv[2], function (error, response, body) {
   if (!error) {
-    const characters = JSON.parse(body).characters;
-    characters.forEach((character) => {
-      request(character, function (error, response, body) {
-        if (!error) {
-          console.log(JSON.parse(body).name);
-        }
-      });
+    const todos = JSON.parse(body);
+    let completed = {};
+    todos.forEach((todo) => {
+      if (todo.completed && completed[todo.userId] === undefined) {
+        completed[todo.userId] = 1;
+      } else if (todo.completed) {
+        completed[todo.userId] += 1;
+      }
     });
+    console.log(completed);
   }
 });
